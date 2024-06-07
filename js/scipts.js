@@ -34,6 +34,8 @@ function getUserSize() {
 
 function main() {
   const pad = document.querySelector(".pad");
+  const randClrBtn = document.querySelector(".randClrBtn");
+  const blackClrBtn = document.querySelector(".blackClrBtn");
 
   renderSquares(pad); //first render with default 16x16 squares
 
@@ -48,6 +50,23 @@ function main() {
       pad.innerHTML = ""; // clear pad before rendering new squares
       renderSquares(pad, userSize);
     }
+  });
+
+  randClrBtn.addEventListener("click", () => {
+    document.querySelectorAll(".square").forEach((square) => {
+      square.addEventListener("mouseover", () => {
+        square.style.backgroundColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+      });
+    });
+  });
+
+  blackClrBtn.addEventListener("click", () => {
+    document.querySelectorAll(".square").forEach((square) => {
+      square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "black";
+      });
+    });
   });
 }
 

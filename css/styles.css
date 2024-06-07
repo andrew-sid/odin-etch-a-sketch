@@ -27,7 +27,7 @@ body {
   overflow: hidden;
 }
 
-.squaresBtn {
+button {
   align-self: center;
   padding: 10px 15px;
 }
