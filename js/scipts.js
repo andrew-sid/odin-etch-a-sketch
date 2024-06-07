@@ -5,6 +5,10 @@ function main() {
     const square = document.createElement("div");
     square.classList.add("square");
 
+    square.addEventListener('mouseover', () =>  {
+      square.style.backgroundColor = 'black';
+    });
+
     container.appendChild(square);
   }
 }
