@@ -5,21 +5,26 @@
 
 body {
   text-align: center;
+  background-color: bisque;
 }
 
 .container {
+  
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
 .pad {
+  background-color: aliceblue;
   display: flex;
   flex-wrap: wrap;
   width: 600px;
   height: 600px;
   border: 1px solid black;
   margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .squaresBtn {

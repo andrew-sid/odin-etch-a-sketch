@@ -1,9 +1,13 @@
 function renderSquares(pad, squares = 16) {
+  const PAD_HEIGHT = 600; // 600 - HEIGHT of pad in css
+  const PAD_WIDTH = 600; // 600 - WIDTH of pad in css
+  const BORDER_WIDTH = 2; // border width in css
+
   for (let i = 0; i < Math.pow(squares, 2); i++) {
     const square = document.createElement("div");
     square.classList.add("square");
-    square.style.width = 600 / squares - 2 + "px"; // 600 - WIDTH of pad in css
-    square.style.height = 600 / squares - 2 + "px"; // 600 - HEIGHT of pad in css
+    square.style.width = PAD_WIDTH / squares - BORDER_WIDTH + "px";
+    square.style.height = PAD_HEIGHT / squares - BORDER_WIDTH + "px";
 
     square.addEventListener("mouseover", () => {
       square.style.backgroundColor = "black";
