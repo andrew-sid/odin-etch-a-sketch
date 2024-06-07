@@ -1,5 +1,5 @@
 function main() {
-  const container = document.querySelector(".container");
+  const pad = document.querySelector(".pad");
 
   for (let i = 0; i < 256; i++) {
     const square = document.createElement("div");
@@ -9,7 +9,7 @@ function main() {
       square.style.backgroundColor = 'black';
     });
 
-    container.appendChild(square);
+    pad.appendChild(square);
   }
 }
 
