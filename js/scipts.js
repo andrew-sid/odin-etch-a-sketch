@@ -10,7 +10,7 @@ function renderSquares(pad, squares = 16) {
     square.style.height = PAD_HEIGHT / squares - BORDER_WIDTH + "px";
 
     square.addEventListener("mouseover", () => {
-      square.style.backgroundColor = "black";
+      square.style.backgroundColor = "black"; // render with default black paint
     });
 
     pad.appendChild(square);
@@ -36,6 +36,7 @@ function main() {
   const pad = document.querySelector(".pad");
   const randClrBtn = document.querySelector(".randClrBtn");
   const blackClrBtn = document.querySelector(".blackClrBtn");
+  const clearBtn = document.querySelector(".clearBtn");
 
   renderSquares(pad); //first render with default 16x16 squares
 
@@ -52,6 +53,7 @@ function main() {
     }
   });
 
+  // random color picking
   randClrBtn.addEventListener("click", () => {
     document.querySelectorAll(".square").forEach((square) => {
       square.addEventListener("mouseover", () => {
@@ -61,11 +63,19 @@ function main() {
     });
   });
 
+  // black color picking
   blackClrBtn.addEventListener("click", () => {
     document.querySelectorAll(".square").forEach((square) => {
       square.addEventListener("mouseover", () => {
         square.style.backgroundColor = "black";
       });
+    });
+  });
+
+  //clear button
+  clearBtn.addEventListener("click", () => {
+    document.querySelectorAll(".square").forEach((square) => {
+      square.style.backgroundColor = "inherit";
     });
   });
 }
